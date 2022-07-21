@@ -1,0 +1,24 @@
+Python, tesserract, openCV
+OCR as a process generally consists of several sub-processes to perform as accurately as possible. The subprocesses are:
+•	Preprocessing of the Image
+•	Text Localization
+•	Character Segmentation
+•	Character Recognition
+•	Post Processing
+Tesseract - an open-source OCR engine that has gained popularity among OCR developers.
+-------------------------
+Before we jump to how part, Let us discuss the negative consequence of choosing the wrong size. After we pick a fixed width and height, 
+the standard procedure is to resize all the images to this fixed size. So, now every image falls into one of the two buckets.
+•	Downscaling: Bigger images will be down scaled, this makes it harder for CNN to learn the features required for classification or detection as the number of pixels 
+where the vital feature will be present is significantly reduced.
+•	Upscaling: When small images are upscaled and padded with zero, then NN has to learn that the padded portion has no impact on classification. 
+Larger images are also slower to train and might require more VRAM.
+So we have to pick our poison, the closer to optimal image size we are, the better it is.
+How is OCR different from a scanner? A scanner merely copies the paper as an image file, so you cannot copy and paste from the document. OCR translates a document 
+into an editable format.
+Guess what? You can definitely perform OCR with Python and just a bunch of lines of code!
+We’re going to use the EasyOCR package.
+---------------------
+
+
+
